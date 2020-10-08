@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel'
 import {Button, Paper} from '@material-ui/core'
  
-export default function Example(props)
+export default function Slider(props)
 {
     var items = [
         {
