@@ -34,7 +34,7 @@ function HideOnScroll({children}) {
   );
 }
 
-export default function NavBar(props) {
+export default function Nav(props) {
   
   const classes = useStyles();
   return (
@@ -44,7 +44,7 @@ export default function NavBar(props) {
         <AppBar className={classes.navBar}>
           <Toolbar>
             <NavBarIcon></NavBarIcon>
-            <NavBarButton name="Home"></NavBarButton>
+            <NavBarButton name="Home">Home</NavBarButton>
             <NavBarButton name="Estudiantes"></NavBarButton>
             <NavBarButton name="Piezas"></NavBarButton>
             <NavBarButton name="Nosotros"></NavBarButton>
