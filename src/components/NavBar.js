@@ -34,9 +34,9 @@ function HideOnScroll({children}) {
   );
 }
 
-export default function NavBar(props) {
-  
+export default function Nav({props}) {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <CssBaseline />

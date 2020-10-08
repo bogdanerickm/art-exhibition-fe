@@ -6,13 +6,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={NavBar} />
+        <Route path="/" component={Home} />
       </Switch>
     </Router>
   );
