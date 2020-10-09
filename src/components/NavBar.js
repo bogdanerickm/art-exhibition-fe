@@ -2,14 +2,20 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import NavBarButton from './NavBarButton';
+import NavBarIcon from './NavBarIcon';
+import Slide from '@material-ui/core/Slide';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  navBar: {
+    backgroundColor:"white",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -19,22 +25,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Nav() {
-  const classes = useStyles();
+function HideOnScroll({children}) {
+  const trigger = useScrollTrigger();
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
+export default function Nav(props) {
+  
+  const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <AppBar className={classes.navBar}>
+          <Toolbar>
+            <NavBarIcon></NavBarIcon>
+            <NavBarButton name="Home">Home</NavBarButton>
+            <NavBarButton name="Estudiantes"></NavBarButton>
+            <NavBarButton name="Piezas"></NavBarButton>
+            <NavBarButton name="Nosotros"></NavBarButton>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
     </div>
   );
 }

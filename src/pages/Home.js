@@ -6,6 +6,10 @@ import Nav from '../components/NavBar';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    marginTop:"64px",
+  /*   [theme.breakpoints.between('md','sm')]: {
+      backgroundColor:"red"
+    } */
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -13,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  
 }));
 
 export default function Home() {

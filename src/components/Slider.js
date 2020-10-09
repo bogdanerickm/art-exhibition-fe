@@ -1,7 +1,17 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Carousel from 'react-material-ui-carousel'
-import {Button, Paper} from '@material-ui/core'
  
+const useStyles = makeStyles((theme) => ({
+    floatingText: {
+      position:"absolute",
+      bottom: "60px",
+      left: 0,
+      right: 0,
+      textAlign:"center"
+    },
+}));
+
 export default function Slider(props)
 {
     var items = [
@@ -11,9 +21,10 @@ export default function Slider(props)
         },
         {
             name: "Random Name #2",
-            description: "Hello World!"
+            description: "Probably the most random thing you have ever seen!"
         }
     ]
+
  
     return (
         <Carousel>
@@ -26,14 +37,13 @@ export default function Slider(props)
  
 function Item(props)
 {
+    const classes = useStyles();
     return (
-        <Paper>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
- 
-            <Button className="CheckButton">
-                Check it out!
-            </Button>
-        </Paper>
+        <>
+            <img src="https://i.picsum.photos/id/815/1600/300.jpg?hmac=EXoAuIE6IuwVWNe01OfLdo-LO_4k7z507eRuYXl1QWU"/>
+            <div className={classes.floatingText}>    
+                <h2>{props.item.name}</h2>
+            </div>
+        </>
     )
 }
