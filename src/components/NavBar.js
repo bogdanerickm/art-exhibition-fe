@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   navBar: {
-    backgroundColor:"white",
+    backgroundColor: "white",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function HideOnScroll({children}) {
+function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
   return (
     <Slide appear={false} direction="down" in={!trigger}>
@@ -35,7 +35,7 @@ function HideOnScroll({children}) {
 }
 
 export default function Nav(props) {
-  
+
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -43,11 +43,11 @@ export default function Nav(props) {
       <HideOnScroll {...props}>
         <AppBar className={classes.navBar}>
           <Toolbar>
-            <NavBarIcon></NavBarIcon>
-            <NavBarButton name="Home">Home</NavBarButton>
-            <NavBarButton name="Estudiantes"></NavBarButton>
-            <NavBarButton name="Piezas"></NavBarButton>
-            <NavBarButton name="Nosotros"></NavBarButton>
+            <NavBarIcon/>
+            <NavBarButton> Home </NavBarButton>
+            <NavBarButton> Estudiantes </NavBarButton>
+            <NavBarButton> Piezas </NavBarButton>
+            <NavBarButton> Nosotres </NavBarButton>
           </Toolbar>
         </AppBar>
       </HideOnScroll>

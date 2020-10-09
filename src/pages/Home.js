@@ -25,8 +25,8 @@ export default function Home() {
 
   return (
     <div className={classes.root}>
-        <Nav></Nav>
-        <Slider></Slider>
+        <Nav/>
+        <Slider/>
     </div>
   );
 }
