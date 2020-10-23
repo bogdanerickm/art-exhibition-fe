@@ -2,22 +2,16 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Slider from '../components/Slider';
 import Nav from '../components/NavBar';
+import ImageSection from '../components/ImageSection';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop:"64px",
-  /*   [theme.breakpoints.between('md','sm')]: {
-      backgroundColor:"red"
-    } */
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  pageContainer:{
+    margin: "0 15%"
   },
-  title: {
-    flexGrow: 1,
-  },
-  
 }));
 
 export default function Home() {
@@ -25,8 +19,11 @@ export default function Home() {
 
   return (
     <div className={classes.root}>
-        <Nav/>
-        <Slider/>
+      <Nav/>
+      <Slider/>
+      <div className={classes.pageContainer}>
+        <ImageSection />
+      </div>
     </div>
   );
 }
